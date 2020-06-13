@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment"
+        android:title="Home"
+        android:icon="@drawable/ic_home_24"
+        />
+    <group>
+        <item android:id="@+id/groupOperation"
+            android:title="Operation">
+            <menu> <item
+                android:id="@+id/operationFragment"
+                android:title="Show operations"
+                android:icon="@drawable/ic_operation_24"/>
+                <item android:id="@+id/addOperationFragment"
+                    android:title="Add operation"
+                    android:icon="@drawable/ic_add_24" />
+                </menu>
+        </item>
+    </group>
+    <group>
+        <item android:id="@+id/goalsGroup"
+            android:title="Goals">
+            <menu> <item
+                android:id="@+id/goalsFragment"
+                android:title="Show Goals"
+                android:icon="@drawable/ic_goal_24"/>
+                <item android:id="@+id/addGoalsFragment"
+                    android:title="Add goal"
+                    android:icon="@drawable/ic_add_24" />
+            </menu>
+        </item>
+    </group>
+
+
+</menu>

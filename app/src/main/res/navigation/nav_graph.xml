@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/addOperationFragment"
+        android:name="com.freesher.moneymanager.AddOperationFragment"
+        android:label="Add new operation"
+        tools:layout="@layout/fragment_add_operation" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.freesher.moneymanager.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/operationFragment"
+        android:name="com.freesher.moneymanager.OperationFragment"
+        android:label="My operations"
+        tools:layout="@layout/fragment_operation" />
+    <fragment
+        android:id="@+id/operationDetailsFragment"
+        android:name="com.freesher.moneymanager.OperationDetailsFragment"
+        android:label="Details of operation"
+        tools:layout="@layout/fragment_operation_details" >
+        <argument
+            android:name="operationId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
