@@ -89,7 +89,7 @@ class AddOperationFragment : Fragment() {
 
             if (isNameValidate && isMoneyValidate && isDescriptionValidate) {
                 val operation = Operation(
-                    id = null,
+
                     name = operationName,
                     description = operationDescription,
                     moneyAmount = operationMoneyAmount,
