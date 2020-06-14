@@ -23,12 +23,7 @@ class OperationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val c = Calendar.getInstance().time
-        val opList = listOf<Operation>(
-            Operation(1,"Operation 1","Some description",20.0, c),
-            Operation(2,"Operation 2","Some description",24.3, c),
-            Operation(3,"Operation 3","Some description",-10.33, c)
-        )
+
         val operationAdapter = OperationAdapter()
 
 
@@ -37,7 +32,7 @@ class OperationFragment : Fragment() {
             adapter = operationAdapter
         }
 
-        operationAdapter.setOperationList(opList)
+
     }
 
 }

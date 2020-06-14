@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".AddOperationFragment">
+    tools:context=".AddOperation.AddOperationFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -91,8 +91,22 @@
                     android:textColor="#000"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Description of operation" />
 
+                <EditText
+                    android:id="@+id/operationDescriptionInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:inputType="textMultiLine"
+                    android:hint="Description of operation"
+                    />
                 <Button
+                    android:id="@+id/addOperationBtn"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

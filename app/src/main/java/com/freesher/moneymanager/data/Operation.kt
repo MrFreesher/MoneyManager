@@ -13,6 +13,6 @@ data class Operation(
     val name: String,
     val description: String,
     val moneyAmount: Double,
-
+    val operationType:String,
     val operationDate: Date
 )

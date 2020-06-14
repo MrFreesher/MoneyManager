@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/addOperationFragment"
-        android:name="com.freesher.moneymanager.AddOperationFragment"
+        android:name="com.freesher.moneymanager.AddOperation.AddOperationFragment"
         android:label="Add new operation"
         tools:layout="@layout/fragment_add_operation" />
     <fragment
