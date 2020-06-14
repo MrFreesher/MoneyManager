@@ -1,6 +1,7 @@
 package com.freesher.moneymanager
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,7 @@ class OperationAdapter : RecyclerView.Adapter<OperationAdapter.OperationViewHold
         fun setOnClickListener(id:Int){
             itemView.setOnClickListener {
                 val bundle = Bundle()
+                Log.e("myapp",id.toString())
                 bundle.putInt("operationId",id)
                 val transition = Navigation.createNavigateOnClickListener(R.id.operationDetailsFragment,bundle).onClick(itemView)
             }
@@ -40,12 +42,13 @@ class OperationAdapter : RecyclerView.Adapter<OperationAdapter.OperationViewHold
     override fun onBindViewHolder(holder: OperationViewHolder, position: Int) {
         val item = operationsList[position]
         holder.bindValues(item.name,item.moneyAmount)
-        holder.setOnClickListener(1)
+        holder.setOnClickListener(item.id!!)
     }
 
     fun setOperationList(newOperations:List<Operation>){
         operationsList.clear()
         operationsList.addAll(newOperations)
+        notifyDataSetChanged()
     }
 
 }

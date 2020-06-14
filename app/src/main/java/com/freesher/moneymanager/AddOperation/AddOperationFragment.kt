@@ -81,13 +81,17 @@ class AddOperationFragment : Fragment() {
                 createDate(operationDayInput.text.toString(), operationTimeInput.text.toString())
             val operationName = operationNameInput.text.toString()
             val operationDescription = operationDescriptionInput.text.toString()
-            val operationMoneyAmount = operationMoneyAmountInput.text.toString().toDouble()
+            var operationMoneyAmount = operationMoneyAmountInput.text.toString().toDouble()
             val operationType = operationTypeInput.selectedItem.toString()
+            if(operationType.equals("Wypłata")){
+                operationMoneyAmount *= -1
+            }
             val isNameValidate = isNameValidate(operationName)
             val isDescriptionValidate = isDescriptionValidate(operationDescription)
             val isMoneyValidate = isMoneyAmountValidate(operationMoneyAmount)
 
             if (isNameValidate && isMoneyValidate && isDescriptionValidate) {
+
                 val operation = Operation(
 
                     name = operationName,

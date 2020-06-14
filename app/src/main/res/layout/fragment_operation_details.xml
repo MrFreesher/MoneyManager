@@ -4,104 +4,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".OperationDetailsFragment">
+    tools:context=".OperationDetails.OperationDetailsFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
 
-        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-    >
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="15dp">
 
             <TextView
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
                 android:text="Name"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/nameContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000"
+
                 android:textSize="24sp"
-                android:text="Name"
-                android:textStyle="bold"
-                android:textColor="#000" />
+                android:textStyle="bold" />
+
             <TextView
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
                 android:text="Operation Type"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/operationTypeContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000"
+
                 android:textSize="24sp"
-                android:text="Name"
-                android:textStyle="bold"
-                android:textColor="#000" />
-            <TextView
+                android:textStyle="bold" />
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:text="Description"
-                android:textColor="#000" />
-
-            <TextView
-                android:id="@+id/descriptionContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:text="Name"
-                android:textStyle="bold"
-                android:textColor="#000" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
                 android:text="Money amount"
+                android:textColor="#000"
 
-                android:textColor="#000" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/moneyAmountContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000"
+
                 android:textSize="24sp"
-                android:text="Name"
-                android:textStyle="bold"
-                android:textColor="#000" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
                 android:text="Date of operation"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/operationDateContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000"
                 android:textSize="24sp"
-                android:text="Name"
-                android:textStyle="bold"
-                android:textColor="#000" />
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="#000"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/descriptionContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

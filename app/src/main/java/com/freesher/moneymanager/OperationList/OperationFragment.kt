@@ -1,18 +1,21 @@
-package com.freesher.moneymanager
+package com.freesher.moneymanager.OperationList
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.freesher.moneymanager.data.Operation
+import com.freesher.moneymanager.OperationAdapter
+import com.freesher.moneymanager.R
 import kotlinx.android.synthetic.main.fragment_home.*
-import java.util.*
 
 
 class OperationFragment : Fragment() {
-
+    private val viewModel: OperationListViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,10 +31,18 @@ class OperationFragment : Fragment() {
 
 
         operationRC.apply {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = operationAdapter
         }
+        viewModel.operations.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                operationAdapter.setOperationList(it!!)
+            }
+        })
+        viewModel.getAllOperations()
 
+        viewModel.getAllOperations()
 
     }
 

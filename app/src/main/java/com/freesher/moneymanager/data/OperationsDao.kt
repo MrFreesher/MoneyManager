@@ -9,11 +9,11 @@ interface OperationsDao {
     @Insert
     fun insertOperation(operation: Operation)
     @Query("SELECT * FROM operations ORDER BY date(operationDate) DESC LIMIT 5")
-    fun loadLastFiveOperations(): LiveData<List<Operation>>
+    fun loadLastFiveOperations(): List<Operation>
     @Query("SELECT * FROM operations")
-    fun loadAllOperations():LiveData<List<Operation>>
-    @Query("SELECT * FROM operations WHERE id = :id")
-    fun loadDetailsOfOperation(id:Int):LiveData<Operation>
+    fun loadAllOperations():List<Operation>
+    @Query("SELECT * FROM operations WHERE id = :operationId")
+    fun loadDetailsOfOperation(operationId:Int):Operation
     @Query("SELECT SUM(moneyAmount) from operations")
-    fun calculateCurrentMoney():LiveData<Double>
+    fun calculateCurrentMoney():Double
 }

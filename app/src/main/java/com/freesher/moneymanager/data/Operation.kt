@@ -8,11 +8,13 @@ import java.util.*
 @Entity(tableName = "operations")
 
 data class Operation(
-    @PrimaryKey(autoGenerate = true)
-    var id: Int?,
     val name: String,
     val description: String,
     val moneyAmount: Double,
     val operationType:String,
     val operationDate: Date
-)
+){
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null
+
+}

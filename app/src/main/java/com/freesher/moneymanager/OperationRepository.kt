@@ -7,20 +7,24 @@ import com.freesher.moneymanager.data.OperationsDao
 class OperationRepository(private val operationsDao: OperationsDao) {
 
 
-    fun getAllOperations(): LiveData<List<Operation>> {
+    fun getAllOperations(): List<Operation> {
         return operationsDao.loadAllOperations()
     }
 
-    fun getLastFiveOperations(): LiveData<List<Operation>> {
+    fun getLastFiveOperations(): List<Operation> {
         return operationsDao.loadLastFiveOperations()
     }
 
-    fun getDetails(id: Int): LiveData<Operation> {
+    fun getDetails(id: Int): Operation {
         return operationsDao.loadDetailsOfOperation(id)
     }
 
     suspend fun insertOperation(operation: Operation) {
         operationsDao.insertOperation(operation)
+    }
+
+    fun calculateAllMoney() : Double{
+        return operationsDao.calculateCurrentMoney()
     }
 
 }
