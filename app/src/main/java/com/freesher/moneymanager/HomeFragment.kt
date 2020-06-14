@@ -31,16 +31,13 @@ class HomeFragment : Fragment() {
             Operation(3,"Operation 3",-10.33, c)
         )
         val operationAdapter = OperationAdapter()
-        val dividerItemDecoration = DividerItemDecoration(
-            operationRC.getContext(),
-            LinearLayoutManager.VERTICAL
-        )
+
 
         operationRC.apply {
             layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
             adapter = operationAdapter
         }
-        operationRC.addItemDecoration(dividerItemDecoration)
+
         operationAdapter.setOperationList(opList)
 
 
