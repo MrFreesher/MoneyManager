@@ -1,6 +1,5 @@
 package com.freesher.moneymanager.AddOperation
 
-import android.app.Application
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
@@ -77,26 +76,32 @@ class AddOperationFragment : Fragment() {
             }
         }
         addOperationBtn.setOnClickListener {
-            val operationDate =
-                createDate(operationDayInput.text.toString(), operationTimeInput.text.toString())
+
             val operationName = operationNameInput.text.toString()
             val operationDescription = operationDescriptionInput.text.toString()
-            var operationMoneyAmount = operationMoneyAmountInput.text.toString().toDouble()
+            var operationMoneyAmount = operationMoneyAmountInput.text.toString()
             val operationType = operationTypeInput.selectedItem.toString()
-            if(operationType.equals("Wypłata")){
-                operationMoneyAmount *= -1
-            }
+
             val isNameValidate = isNameValidate(operationName)
             val isDescriptionValidate = isDescriptionValidate(operationDescription)
             val isMoneyValidate = isMoneyAmountValidate(operationMoneyAmount)
-
-            if (isNameValidate && isMoneyValidate && isDescriptionValidate) {
-
+            val isDateStringValidate = isDateEmpty(operationDayInput.text.toString())
+            val isTimeStringValidate = isTimeEmpty(operationTimeInput.text.toString())
+            if (isNameValidate && isMoneyValidate && isDescriptionValidate && isDateStringValidate && isTimeStringValidate) {
+                val operationDate =
+                    createDate(
+                        operationDayInput.text.toString(),
+                        operationTimeInput.text.toString()
+                    )
+                var operationMoneyAmountD = operationMoneyAmount.toDouble()
+                if (operationType.equals("Payoff")) {
+                    operationMoneyAmountD *= -1
+                }
                 val operation = Operation(
 
                     name = operationName,
                     description = operationDescription,
-                    moneyAmount = operationMoneyAmount,
+                    moneyAmount = operationMoneyAmountD,
                     operationDate = operationDate,
                     operationType = operationType
                 )
@@ -109,24 +114,50 @@ class AddOperationFragment : Fragment() {
 
     fun isNameValidate(name: String): Boolean {
         if (name.isEmpty()) {
+            operationNameInput.error = "Name value is required"
             return false
         } else {
+
             return true
         }
     }
 
     fun isDescriptionValidate(description: String): Boolean {
         if (description.isEmpty()) {
+            operationDescriptionInput.error = "Description value is required"
             return false
         } else {
+
             return true
         }
     }
 
-    fun isMoneyAmountValidate(moneyAmount: Double): Boolean {
-        if (moneyAmount.toString().isEmpty()) {
+    fun isMoneyAmountValidate(moneyAmount: String): Boolean {
+        if (moneyAmount.isEmpty()) {
+            operationMoneyAmountInput.error = "Money value is required"
             return false
         } else {
+
+            return true
+        }
+    }
+
+    fun isDateEmpty(dateValue: String): Boolean {
+        if (dateValue.isEmpty()) {
+            operationDayInput.error = "Date value is required"
+            return false
+        } else {
+
+            return true
+        }
+    }
+
+    fun isTimeEmpty(timeString: String): Boolean {
+        if (timeString.isEmpty()) {
+            operationTimeInput.error = "Time value is required"
+            return false
+        } else {
+
             return true
         }
     }

@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="operationTypes">
-        <item>Wpłata</item>
-        <item>Wypłata</item>
+        <item>Payment</item>
+        <item>Payoff</item>
     </string-array>
 </resources>
