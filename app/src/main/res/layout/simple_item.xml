@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:paddingStart="5dp">
     <TextView
+        android:id="@+id/operationName"
         android:layout_width="wrap_content"
         android:layout_weight="3"
         android:text="Wypłata"
-        android:layout_height="match_parent" />
+        android:textSize="26sp"
+        android:textColor="#000"
+        android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/operationMoneyAmount"
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:text="200zł"
-        android:layout_height="match_parent" />
+        android:textSize="26sp"
+        android:textAlignment="textEnd"
+        android:textColor="#000"
+        android:layout_height="wrap_content" />
 </LinearLayout>

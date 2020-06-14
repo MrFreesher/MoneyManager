@@ -3,69 +3,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
-  <androidx.cardview.widget.CardView
-      android:layout_marginTop="10dp"
-      app:cardCornerRadius="10dp"
-      android:layout_marginEnd="20dp"
-      android:layout_marginStart="20dp"
-      android:layout_width="match_parent"
-      android:elevation="5dp"
-      android:layout_height="wrap_content">
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-
-          android:orientation="vertical">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:padding="10dp"
-              android:textSize="28sp"
-              android:textColor="#000000"
-              android:layout_gravity="center"
-              android:text="Twoje oszczędności to"/>
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="10dp"
-          android:textSize="22sp"
-          android:textColor="#000000"
-          android:layout_gravity="center"
-          android:text="23.59zł"/>
-      </LinearLayout>
-  </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="20dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
         android:layout_width="match_parent"
-        android:elevation="5dp"
-        android:layout_height="wrap_content">
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+
+        android:elevation="5dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="28sp"
-                android:textColor="#000000"
                 android:layout_gravity="center"
-                android:text="Ostatnie operacje"/>
+                android:padding="10dp"
+                android:text="Twoje oszczędności to"
+                android:textColor="#000000"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="23.59zł"
+                android:textColor="#000000"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="5dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="Ostatnie operacje"
+                android:textColor="#000000"
+                android:textSize="28sp" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/operationRC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:itemCount="3"
-                tools:listitem="@layout/simple_item" />
+                android:padding="10dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="5dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="Ostatnie operacje"
+                android:textColor="#000000"
+                android:textSize="28sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/operationRC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
