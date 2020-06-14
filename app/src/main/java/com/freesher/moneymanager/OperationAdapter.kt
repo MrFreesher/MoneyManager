@@ -1,8 +1,10 @@
 package com.freesher.moneymanager
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.freesher.moneymanager.data.Operation
 import kotlinx.android.synthetic.main.simple_item.view.*
@@ -15,6 +17,13 @@ class OperationAdapter : RecyclerView.Adapter<OperationAdapter.OperationViewHold
         fun bindValues(operationName: String, operationMoneyAmount: Double) {
             operationNameContent.text = operationName
             operationMoneyAmountConent.text = operationMoneyAmount.toString()
+        }
+        fun setOnClickListener(id:Int){
+            itemView.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("operationId",id)
+                val transition = Navigation.createNavigateOnClickListener(R.id.operationDetailsFragment,bundle).onClick(itemView)
+            }
         }
 
     }
@@ -31,6 +40,7 @@ class OperationAdapter : RecyclerView.Adapter<OperationAdapter.OperationViewHold
     override fun onBindViewHolder(holder: OperationViewHolder, position: Int) {
         val item = operationsList[position]
         holder.bindValues(item.name,item.moneyAmount)
+        holder.setOnClickListener(1)
     }
 
     fun setOperationList(newOperations:List<Operation>){
