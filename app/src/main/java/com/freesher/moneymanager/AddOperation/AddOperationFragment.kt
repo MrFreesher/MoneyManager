@@ -3,6 +3,7 @@ package com.freesher.moneymanager.AddOperation
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.text.method.DigitsKeyListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.freesher.moneymanager.R
 import com.freesher.moneymanager.data.Operation
 import kotlinx.android.synthetic.main.fragment_add_operation.*
+import java.text.DecimalFormatSymbols
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -75,6 +77,8 @@ class AddOperationFragment : Fragment() {
                 timePickerDialog.show()
             }
         }
+
+        operationMoneyAmountInput.setKeyListener(DigitsKeyListener.getInstance("0123456789" + "."))
         addOperationBtn.setOnClickListener {
 
             val operationName = operationNameInput.text.toString()

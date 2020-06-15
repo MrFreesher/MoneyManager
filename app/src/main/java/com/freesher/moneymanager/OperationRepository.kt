@@ -27,4 +27,8 @@ class OperationRepository(private val operationsDao: OperationsDao) {
         return operationsDao.calculateCurrentMoney()
     }
 
+    fun deleteOperation(operation: Operation){
+        operationsDao.deleteOperation(operation)
+    }
+
 }

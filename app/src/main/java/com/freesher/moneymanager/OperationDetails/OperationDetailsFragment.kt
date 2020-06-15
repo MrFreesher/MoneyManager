@@ -1,10 +1,13 @@
 package com.freesher.moneymanager.OperationDetails
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -20,6 +23,7 @@ class OperationDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_operation_details, container, false)
     }
@@ -55,5 +59,28 @@ class OperationDetailsFragment : Fragment() {
         viewModel.getDetails(id)
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.deleteOperation ->{
+                AlertDialog.Builder(requireContext()).also {
+                    it.setTitle("Remove")
+                    it.setMessage("Are you sure to remove this operation from your list")
+                    it.setPositiveButton(
+                        "Yes"
+                    ) { dialog, _ ->
 
+
+                        dialog.dismiss()
+
+                        viewModel.deleteOperation()
+
+                        Toast.makeText(requireContext(),"Operation was removed from your list",Toast.LENGTH_SHORT).show()
+                    }
+                    it.setNegativeButton("No") { dialog, _ -> dialog.dismiss() }
+                }.show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+
+    }
 }

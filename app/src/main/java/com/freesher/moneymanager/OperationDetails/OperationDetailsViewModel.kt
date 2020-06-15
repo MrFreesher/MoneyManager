@@ -37,5 +37,11 @@ class OperationDetailsViewModel(application: Application) : AndroidViewModel(app
         }
 
 
+
+    }
+    fun deleteOperation(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteOperation(operationDetails.value!!)
+        }
     }
 }
