@@ -9,7 +9,7 @@ import androidx.room.Query
 interface OperationsDao {
     @Insert
     fun insertOperation(operation: Operation)
-    @Query("SELECT * FROM operations ORDER BY date(operationDate) DESC LIMIT 5")
+    @Query("SELECT * FROM operations ORDER BY id DESC LIMIT 5")
     fun loadLastFiveOperations(): List<Operation>
     @Query("SELECT * FROM operations")
     fun loadAllOperations():List<Operation>

@@ -57,7 +57,7 @@ class AddOperationFragment : Fragment() {
                             operationDayInput.setText("$dayOfMonth/$month/$year")
 
                         }
-                    }, 2020, 14, 6
+                    }, 2020, 5, 15
 
                 )
                 datePickerDialog.show()

@@ -9,16 +9,19 @@
         android:layout_width="wrap_content"
         android:layout_weight="3"
         android:text="Wypłata"
+        android:textAlignment="viewStart"
         android:textSize="26sp"
         android:textColor="#000"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
     <TextView
         android:id="@+id/operationMoneyAmount"
         android:layout_width="wrap_content"
         android:layout_weight="1"
+        android:layout_marginRight="5dp"
         android:text="200zł"
         android:textSize="26sp"
-        android:textAlignment="textEnd"
+        android:textAlignment="viewEnd"
+
         android:textColor="#000"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 </LinearLayout>

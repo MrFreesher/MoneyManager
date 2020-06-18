@@ -3,10 +3,7 @@ package com.freesher.moneymanager.OperationDetails
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -39,7 +36,7 @@ class OperationDetailsFragment : Fragment() {
                 val format = SimpleDateFormat("dd-MM-yyyy hh:mm")
                 val dateString = format.format(it.operationDate)
                 operationDateContent.text = dateString
-                moneyAmountContent.text = it?.moneyAmount.toString()
+                moneyAmountContent.text = it?.moneyAmount.toInt().toString()
 
 
             }
@@ -59,6 +56,10 @@ class OperationDetailsFragment : Fragment() {
         viewModel.getDetails(id)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.deleteOperation).setVisible(true)
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.deleteOperation ->{
