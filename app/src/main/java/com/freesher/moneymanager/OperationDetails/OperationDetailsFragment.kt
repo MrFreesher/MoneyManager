@@ -46,7 +46,6 @@ class OperationDetailsFragment : Fragment() {
         viewModel.getDetails(id)
 
 
-        Log.e("myapp",id.toString())
     }
 
     override fun onStart() {

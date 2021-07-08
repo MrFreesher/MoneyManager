@@ -46,6 +46,10 @@ class AddOperationFragment : Fragment() {
         }
         operationDayInput.setOnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
+                val calendar:Calendar = Calendar.getInstance();
+                val currentYear = calendar.get(Calendar.YEAR);
+                val currentMonth = calendar.get(Calendar.MONTH);
+                val currentDay = calendar.get(Calendar.DAY_OF_MONTH);
                 val datePickerDialog = DatePickerDialog(
                     requireContext(), object : DatePickerDialog.OnDateSetListener {
                         override fun onDateSet(
@@ -57,7 +61,7 @@ class AddOperationFragment : Fragment() {
                             operationDayInput.setText("$dayOfMonth/$month/$year")
 
                         }
-                    }, 2020, 5, 15
+                    }, currentYear, currentMonth, currentDay
 
                 )
                 datePickerDialog.show()

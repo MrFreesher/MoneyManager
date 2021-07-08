@@ -14,15 +14,15 @@ class OperationAdapter : RecyclerView.Adapter<OperationAdapter.OperationViewHold
     private val operationsList = mutableListOf<Operation>()
     class OperationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val operationNameContent = itemView.operationName
-        private val operationMoneyAmountConent = itemView.operationMoneyAmount
+        private val operationMoneyAmountContent = itemView.operationMoneyAmount
         fun bindValues(operationName: String, operationMoneyAmount: Double) {
             operationNameContent.text = operationName
-            operationMoneyAmountConent.text = operationMoneyAmount.toString()
+            operationMoneyAmountContent.text = operationMoneyAmount.toString()
         }
         fun setOnClickListener(id:Int){
             itemView.setOnClickListener {
                 val bundle = Bundle()
-                Log.e("myapp",id.toString())
+
                 bundle.putInt("operationId",id)
                 val transition = Navigation.createNavigateOnClickListener(R.id.operationDetailsFragment,bundle).onClick(itemView)
             }
